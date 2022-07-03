@@ -30,6 +30,7 @@ body{
 }
 
 .info-box {
+    display: none;
     width: 540px;
     background: white;
     border-radius: 5px;
@@ -79,6 +80,7 @@ body{
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .buttons button.restart {
@@ -87,9 +89,14 @@ body{
 }
 
 .buttons button.restart:hover {
-    
+    background: darkolivegreen;
 }
 
 .buttons button.quit {
     color: darkolivegreen;
+}
+
+.buttons button.quit:hover {
+    color: white;
+    background: darkolivegreen;
 }
