@@ -117,3 +117,14 @@ body{
     color: white;
     background: darkolivegreen;
 }
+
+.quiz-box {
+    width: 550px;
+    background: white;
+    border-radius: 10px;
+}
+
+.quiz-box header {
+    height: 70px;
+    padding: 0 30px;
+}
