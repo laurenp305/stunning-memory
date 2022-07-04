@@ -130,4 +130,11 @@ body{
     background: white;
     display:flex;
     justify-content: space-between;
+    border-radius: 0px 3px 3px 5px 1px rgba(0,0,0,0);
 }
+
+.quiz-box header .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
