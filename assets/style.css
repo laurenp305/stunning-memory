@@ -309,4 +309,20 @@ footer .next-button:hover {
     font-size: 20px;
     font-weight: 500;
 }
+.result-box .score-text span{
+    display:flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.score-text span p{
+    font-weight: 600;
+    padding: 0 4px;
+}
+
+.result-box .buttons{
+    display: flex;
+    margin: 20px 0;
+}
 
