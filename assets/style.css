@@ -127,4 +127,7 @@ body{
 .quiz-box header {
     height: 70px;
     padding: 0 30px;
+    background: white;
+    display:flex;
+    justify-content: space-between;
 }
