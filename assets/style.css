@@ -138,3 +138,14 @@ body{
     font-weight: 600;
 }
 
+.quiz-box header .timer {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    height: 45px;
+    background: rgb(209, 185, 122);
+    border: 1px solid darkolivegreen;
+    border-radius: 10px;
+    padding: 0 8px;
+}
