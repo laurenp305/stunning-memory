@@ -149,3 +149,25 @@ body{
     border-radius: 10px;
     padding: 0 8px;
 }
+
+.quiz-box header .timer .time-text {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+.quiz-box header .timer .timer-sec {
+    font-size: 18px;
+    font-weight: 500;
+    background: darkgray;
+    height: 30px;
+    width: 45px;
+    color: white;
+    text-align: 30px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    user-select: none;
+}
+
+.quiz-box .section {
+    
+}
