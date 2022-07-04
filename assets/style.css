@@ -126,6 +126,7 @@ body{
 /*QUIZ BOX STYLING*/
 
 .quiz-box {
+    display: none;
     width: 550px;
     background: white;
     border-radius: 10px;
@@ -281,6 +282,6 @@ footer .next-button {
     cursor: pointer;
 }
 
-footer .next-button {
-    
+footer .next-button:hover {
+    background: darkolivegreen;
 }
