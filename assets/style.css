@@ -230,12 +230,57 @@ section .option-list .option:last-child {
     pointer-events: none;
 }
 .option-list .option .icon.tick{
-    border-color: green;
-    color: green; 
+    color: green;
+    border-color: green; 
     background: lightgreen;
 }
 
-.option-list .option .icon.tick{
-    border-color: green;
-    color: green; 
+.option-list .option .icon.cross{
+    color: red; 
+    border-color: red;
+    background: lightpink;
+}
+
+/*FOOTER STYLING*/
+
+.quiz-box footer{
+    height: 60px;
+    width: 100%;
+    padding: 0 30px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz-box footer .total-que span{
+    display:flex;
+    user-select: none;
+}
+
+footer .total-que span p{
+    font-weight: 500;
+    padding: 0 5px;
+
+}
+
+.total-que span p:first-child{
+    padding-left: 0px;
+}
+
+footer .next-button {
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: white;
+    background: darkolivegreen;
+    border-radius: 10px;
+    border: 1 px solid darkolivegreen;
+    cursor: pointer;
+}
+
+footer .next-button {
+    
 }
