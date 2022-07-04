@@ -46,6 +46,9 @@ body{
     cursor: pointer;
 }
 
+/*INFO BOX STYLING*/
+
+
 .info-box {
     display: none;
     width: 540px;
@@ -100,6 +103,8 @@ body{
     transition: all 0.3s ease;
 }
 
+/*BUTTONS STYLING*/
+
 .buttons button.restart {
     color: white;
     background: darkolivegreen;
@@ -118,6 +123,8 @@ body{
     background: darkolivegreen;
 }
 
+/*QUIZ BOX STYLING*/
+
 .quiz-box {
     width: 550px;
     background: white;
@@ -125,6 +132,8 @@ body{
 }
 
 .quiz-box header {
+    position: relative;
+    z-index: 90;
     height: 70px;
     padding: 0 30px;
     background: white;
@@ -169,5 +178,64 @@ body{
 }
 
 .quiz-box .section {
-    
+    padding: 25px 30px 20px 30px;
+    background: white;
+}
+
+.quiz-box .section .que-text{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quiz-box .section .option-list {
+    padding: 20px 0;
+    display: block;
+}
+
+/*SECTION STYLING*/
+
+section .option-list .option { 
+    background: #92a375
+    border: 1px solid darkolivegreen;
+    border-radius: 10px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section .option-list .option:hover { 
+    color: darkolivegreen;
+    background: #92a375;
+    border-color: #a1ac8e
+}
+
+section .option-list .option:last-child { 
+    margin-bottom: 0px;
+}
+
+/*OPTION LIST STYLING*/
+
+.option-list .option .icon {
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 24px;
+    pointer-events: none;
+}
+.option-list .option .icon.tick{
+    border-color: green;
+    color: green; 
+    background: lightgreen;
+}
+
+.option-list .option .icon.tick{
+    border-color: green;
+    color: green; 
 }
