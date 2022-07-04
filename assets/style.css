@@ -285,3 +285,28 @@ footer .next-button {
 footer .next-button:hover {
     background: darkolivegreen;
 }
+
+/*RESULT BOX STYLING*/
+
+.result-box{
+    background: white;
+    width: 450px;
+    padding: 25px 30px;
+    border-radius: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result-box .icon{
+    font-size: 100px;
+    color: darkolivegreen;
+    margin-bottom: 10px;
+}
+
+.result-box .complete-text{
+    font-size: 20px;
+    font-weight: 500;
+}
+
