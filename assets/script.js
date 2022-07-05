@@ -1,9 +1,14 @@
 // getting all required elements
-const start_button = document.querySelector(".start_button");
+const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
-const exit_button = info_box.querySelector(".buttons .quit");
-const continue_button = info_box.querySelector(".buttons .restart");
-const quiz_button = document.querySelector(".quiz_box");
+const exit_btn = info_box.querySelector(".buttons .quit");
+const continue_btn = info_box.querySelector(".buttons .restart");
+const quiz_box = document.querySelector(".quiz_box");
+const result_box = document.querySelector(".result_box");
+const option_list = document.querySelector(".option_list");
+const time_line = document.querySelector("header .time_line");
+const timeText = document.querySelector(".timer .time_left_txt");
+const timeCount = document.querySelector(".timer .timer_sec");
 
 //if Start Quiz Button Clicked
 start_button.onclick = ()=>{
@@ -33,7 +38,7 @@ next_button.onclick = ()=>{
     if(que_count < questions.length - 1){
         que_count++;
         showQuestions(que_count);
-        queCounter(1);
+        queCounter(que_numb);
     }else{
         console.log("Questions completed");
     }
