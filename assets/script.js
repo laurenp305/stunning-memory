@@ -20,9 +20,24 @@ continue_button.onclick = ()=>{
     info_box.classList.remove("activeInfo");//hide the info box
     quiz_box.classList.add("activeQuiz");//show the quiz box
     showQuestions(0);
+    queCounter(1);
 }
 
 let que_count = 0;
+let que_numb = 1;
+
+const next_button = quiz_box.querySelector(".next_button");
+
+//If next button is clicked
+next_button.onclick = ()=>{
+    if(que_count < questions.length - 1){
+        que_count++;
+        showQuestions(que_count);
+        queCounter(1);
+    }else{
+        console.log("Questions completed");
+    }
+}
 
 //getting questions and options from array in other js sheet
 function showQuestions(index){
@@ -37,9 +52,9 @@ function showQuestions(index){
     option_list.innerHTML = option_tag;
 }
 
-function queCounter(){
+function queCounter(index){
     const bottom_ques_counter = quiz_box.querySelector(".total_que");
-    let totalQuesCountTag = '<span><p>' + que_count + '</p>of<p>' + questions.length + '</p>Questions</span>';
+    let totalQuesCountTag = '<span><p>' + index + que_count + '</p>of<p>' + questions.length + '</p>Questions</span>';
     bottom_ques_counter.innerHTML = totalQuesCountTag; 
 }
 
