@@ -132,19 +132,18 @@ function optionSelected(answer){
 
         //if answer is incorrect then select the correct answer
         for(i=0; i < allOptions; i++){
-            if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
+            if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer 
                 option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
                 option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                console.log("Time Off: Auto selected correct answer.");
+                console.log("Auto selected correct answer.");
             }
         }
-
-//when user selects disabled all options
+    }
+//other options are disabled when user selects one option
 for(i=0; i < allOptions; i++){
-    option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+    option_list.children[i].classList.add("disabled"); //disables all options once one option is selected
 }
-next_btn.classList.add("show"); //show the next button if user selected any option
-}
+next_btn.classList.add("show"); //show the next button if user selects whichever option
 }
 
 function startTimerLine(time){
