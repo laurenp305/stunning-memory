@@ -1,4 +1,4 @@
-// getting all required elements
+// all required elements
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
@@ -139,8 +139,13 @@ for (let i = 0; i < allOptions; ii++) {
     option_list.children[i].classList.add("disabled");
 }
 
-
-
+functionStartTimer(time){
+    counter =setInterval(timer, 1000);
+    function timer(){
+        timeCount.textContent = time;
+        time--
+    }
+}
 
 
 
