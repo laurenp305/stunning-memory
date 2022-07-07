@@ -65,15 +65,26 @@ quit_quiz.onclick = ()=>{
     window.location.reload(); //reload the current window
 }
 
-//If next button is clicked
+const next_btn = document.querySelector("footer .next_btn");
+const bottom_ques_counter = document.querySelector("footer .total_que");
+
+// if Next Que button clicked
 next_btn.onclick = ()=>{
-    if(que_count < questions.length - 1){
-        que_count++;
-        que_numb++;
-        showQuestions(que_count);
-        queCounter(que_numb);
+    if(que_count < questions.length - 1){ //if question count is less than total question length
+        que_count++; //increment the que_count value
+        que_numb++; //increment the que_numb value
+        showQuetions(que_count); //calling showQestions function
+        queCounter(que_numb); //passing que_numb value to queCounter
+        clearInterval(counter); //clear counter
+        clearInterval(counterLine); //clear counterLine
+        startTimer(timeValue); //calling startTimer function
+        startTimerLine(widthValue); //calling startTimerLine function
+        timeText.textContent = "Time Left"; //change the timeText to Time Left
+        next_btn.classList.remove("show"); //hide the next button
     }else{
-        console.log("Questions completed");
+        clearInterval(counter); //clear counter
+        clearInterval(counterLine); //clear counterLine
+        showResult(); //calling showResult function
     }
 }
 
@@ -113,14 +124,11 @@ function optionSelected(answer){
     }
 }
 
-//once user selects disabled all options
-
-
-
-function queCounter(index){
-    const bottom_ques_counter = quiz_box.querySelector(".total_que");
-    let totalQuesCountTag = '<span><p>' + index + que_count + '</p>of<p>' + questions.length + '</p>Questions</span>';
-    bottom_ques_counter.innerHTML = totalQuesCountTag; 
+//when user selects disabled all options
+for (let i = 0; i < allOptions; ii++) {
+    option_list.children[i].classList.add("disabled");
 }
+
+
 
 
