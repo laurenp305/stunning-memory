@@ -1,8 +1,8 @@
 // getting all required elements
-const start_button = document.querySelector(".start_btn button");
+const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
-const exit_button = info_box.querySelector(".buttons .quit");
-const continue_button = info_box.querySelector(".buttons .restart");
+const exit_btn = info_box.querySelector(".buttons .quit");
+const continue_btn = info_box.querySelector(".buttons .restart");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
@@ -11,17 +11,17 @@ const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
 //if Start Quiz Button Clicked
-start_button.onclick = ()=>{
+start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show the info box
 }
 
 //if Exit Button Clicked
-exit_button.onclick = ()=>{
+exit_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo");//hide the info box
 }
 
 //if Continue Button Clicked
-continue_button.onclick = ()=>{
+continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo");//hide the info box
     quiz_box.classList.add("activeQuiz");//show the quiz box
     showQuetions(0); 
@@ -30,19 +30,38 @@ continue_button.onclick = ()=>{
     startTimerLine(0); 
 }
 
+let timeValue =  15;
 let que_count = 0;
 let que_numb = 1;
-let timeValue =  15;
 let userScore = 0;
 let counter;
 let counterLine;
 let widthValue = 0;
 
 const restart_quiz = result_box.querySelector(".buttons .restart");
-const next_button = quiz_box.querySelector(".next_button");
+const quit_quiz = quiz_box.querySelector(".buttons .quit");
+
+// if restartQuiz button clicked
+restart_quiz.onclick = ()=>{
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    result_box.classList.remove("activeResult"); //hide result box
+    timeValue = 15; 
+    que_count = 0;
+    que_numb = 1;
+    userScore = 0;
+    widthValue = 0;
+    showQuetions(que_count); //calling showQestions function
+    queCounter(que_numb); //passing que_numb value to queCounter
+    clearInterval(counter); //clear counter
+    clearInterval(counterLine); //clear counterLine
+    startTimer(timeValue); //calling startTimer function
+    startTimerLine(widthValue); //calling startTimerLine function
+    timeText.textContent = "Time Left"; //change the text of timeText to Time Left
+    next_btn.classList.remove("show"); //hide the next button
+}
 
 //If next button is clicked
-next_button.onclick = ()=>{
+next_btn.onclick = ()=>{
     if(que_count < questions.length - 1){
         que_count++;
         que_numb++;
@@ -66,6 +85,7 @@ function showQuetions(index){
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
     const option = option_list.querySelectorAll(".option");
+        // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
@@ -75,14 +95,21 @@ function showQuetions(index){
 function optionSelected(answer){
     let userAns = answer.textContent;
     let correctAns = questions[que_count].answer;
-    if(userAns = correctAns){
-        answer.classList.add("correct");
-        console.log("Answer is correct");
+    const allOptions = option_list.children.length; //getting all option items
+    if(userAns = correctAns){ //if user selected option is equal to array's correct answer
+        userScore += 1; //upgrading score value with 1
+        answer.classList.add("correct"); //adding green color to correct selected option
+        answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
+        console.log("Correct Answer");
+        console.log("Your correct answers = " + userScore);
     }else{
         answer.classList.add("incorrect");
-        console.log("Answer is wrong")
+        console.log("Answer is wrong");
     }
 }
+
+//once user selects disabled all options
+
 
 
 function queCounter(index){
