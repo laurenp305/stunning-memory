@@ -13,7 +13,7 @@ body{
     background: darkolivegreen;
 }
 
-.start_button,
+.start_btn,
 .info_box,
 .quiz_box,
 .result_box{
@@ -26,7 +26,7 @@ body{
     transition: all 0.3s ease;
 }
 
-.start_button, .info_box {
+.start_btn, .info_box {
     position: absolute; 
     top: 50%;
     left: 50%;
@@ -43,7 +43,7 @@ body{
 
 /*START QUIZ BUTTON STYLING*/
 
-.start_button button {
+.start_btn button {
     font-size: 25px;
     font-weight: 500;
     color: darkolivegreen;
@@ -268,10 +268,11 @@ section .option_list .option:last-child {
     background: lightpink;
 }
 
-option_list .option.disabled{
+.option_list .option.disabled {
     pointer-events: none;
 
 }
+
 
 
 /*FOOTER STYLING*/
@@ -300,7 +301,7 @@ footer .total_que span p{
     padding-left: 0px;
 }
 
-footer .next_button {
+footer .next_btn {
     height: 40px;
     padding: 0 13px;
     font-size: 18px;
@@ -314,7 +315,7 @@ footer .next_button {
     cursor: pointer;
 }
 
-footer .next_button:hover {
+footer .next_btn:hover {
     background: darkolivegreen;
 }
 
