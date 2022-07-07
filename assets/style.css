@@ -210,17 +210,17 @@ body{
 /*SECTION STYLING*/
 
 section .option_list .option { 
-    background: #92a375
+    background: #92a375;
     border: 1px solid darkolivegreen;
     border-radius: 10px;
     padding: 8px 15px;
-    margin-bottom: 15px;
     font-size: 17px;
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
+    margin-bottom: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 section .option_list .option:hover { 

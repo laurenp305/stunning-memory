@@ -38,6 +38,7 @@ let counter;
 let counterLine;
 let widthValue = 0;
 
+const restart_quiz = result_box.querySelector(".buttons .restart");
 const next_button = quiz_box.querySelector(".next_button");
 
 //If next button is clicked
@@ -77,6 +78,7 @@ function optionSelected(answer){
         answer.classList.add("correct");
         console.log("Answer is correct");
     }else{
+        answer.classList.add("incorrect");
         console.log("Answer is wrong")
     }
 }
