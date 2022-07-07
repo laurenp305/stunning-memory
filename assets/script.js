@@ -107,6 +107,8 @@ function showQuetions(index){
     }
 }
 
+let tickIcon = '<div class="icon tick"><i class ="fas fa-check"></i></div>';
+let crossIcon = '<div class="icon tick"><i class ="fas fa-check"></i></div>';
 
 function optionSelected(answer){
     let userAns = answer.textContent;
@@ -131,7 +133,6 @@ function optionSelected(answer){
     }
 }
 }
-
 
 //when user selects disabled all options
 for (let i = 0; i < allOptions; ii++) {
