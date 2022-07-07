@@ -60,6 +60,11 @@ restart_quiz.onclick = ()=>{
     next_btn.classList.remove("show"); //hide the next button
 }
 
+// if quitQuiz button clicked
+quit_quiz.onclick = ()=>{
+    window.location.reload(); //reload the current window
+}
+
 //If next button is clicked
 next_btn.onclick = ()=>{
     if(que_count < questions.length - 1){
