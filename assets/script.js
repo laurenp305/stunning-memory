@@ -110,7 +110,7 @@ function showQuetions(index){
 
 function optionSelected(answer){
     let userAns = answer.textContent;
-    let correctAns = questions[que_count].answer;
+    let correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
     if(userAns = correctAns){ //if user selected option is equal to array's correct answer
         userScore += 1; //upgrading score value with 1
@@ -120,14 +120,25 @@ function optionSelected(answer){
         console.log("Your correct answers = " + userScore);
     }else{
         answer.classList.add("incorrect");
+        answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
         console.log("Answer is wrong");
+        //if answe is incorrect then automatically select the correct answer
+        for (let i = 0; i < allOptions; ii++) {
+            if(option_list.children[i].extContent == correctAns){
+                option_list.children[i].setAttribute("class", "option correct");
+            }
+            // option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
+}
+
 
 //when user selects disabled all options
 for (let i = 0; i < allOptions; ii++) {
     option_list.children[i].classList.add("disabled");
 }
+
+
 
 
 
