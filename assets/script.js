@@ -125,18 +125,20 @@ function optionSelected(answer){
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
         console.log("Answer is wrong");
         //if answe is incorrect then automatically select the correct answer
-        for (let i = 0; i < allOptions; ii++) {
-            if(option_list.children[i].extContent == correctAns){
-                option_list.children[i].setAttribute("class", "option correct");
+        for(i=0; i < allOptions; i++){
+            if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
+                option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
+                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
+                console.log("Time Off: Auto selected correct answer.");
             }
-            // option[i].setAttribute("onclick", "optionSelected(this)");
-    }
-}
-}
+        }
 
 //when user selects disabled all options
-for (let i = 0; i < allOptions; ii++) {
-    option_list.children[i].classList.add("disabled");
+for(i=0; i < allOptions; i++){
+    option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+}
+next_btn.classList.add("show"); //show the next button if user selected any option
+}
 }
 
 function startTimerLine(time){
