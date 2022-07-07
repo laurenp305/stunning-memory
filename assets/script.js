@@ -66,8 +66,8 @@ function showQuetions(index){
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
     const option = option_list.querySelectorAll(".option");
-    for (let i = 0; i < option.length; i++) {
-        option[i].setAttribute("onclick", "optionSelected(this)")
+    for(i=0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
 

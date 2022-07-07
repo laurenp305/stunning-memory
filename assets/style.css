@@ -262,6 +262,12 @@ section .option_list .option:last-child {
     background: lightgreen;
 }
 
+.option_list .option.incorrect {
+    color: red; 
+    border-color: red;
+    background: lightpink;
+}
+
 /*FOOTER STYLING*/
 
 .quiz_box footer{
