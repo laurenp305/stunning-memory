@@ -32,6 +32,11 @@ continue_button.onclick = ()=>{
 
 let que_count = 0;
 let que_numb = 1;
+let timeValue =  15;
+let userScore = 0;
+let counter;
+let counterLine;
+let widthValue = 0;
 
 const next_button = quiz_box.querySelector(".next_button");
 
@@ -69,6 +74,7 @@ function optionSelected(answer){
     let userAns = answer.textContent;
     let correctAns = questions[que_count].answer;
     if(userAns = correctAns){
+        answer.classList.add("correct");
         console.log("Answer is correct");
     }else{
         console.log("Answer is wrong")
