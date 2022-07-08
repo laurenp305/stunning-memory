@@ -10,8 +10,6 @@ const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
-const mostRecentScore = localStorage.getItem("mostRecentScore");
-const highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 
 // if Start Quiz button is clicked
 start_btn.onclick = ()=>{
@@ -194,27 +192,4 @@ function queCounter(index){
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
 
-const MAX_HIGH_SCORES = 5;
-finalScore.innerText = mostRecentStorage;
 
-username.addEventListener("keyup", () => {
-    saveScoreBtn.disabled = !username.value;
-})
-
-saveHighScore = e => {
-console.log("clciked the save button");
-e.preventDefault();
-
-const score = {
-    score: Math.floor(Math.random() * 100), 
-    name: username.value
-};
-
-highScores.push(Score);
-highScores.sort((a, b) => b.score - a.score);
-highScores.splice(5);
-
-localStorage.setItem("highscores", JSON.stringify(highscores));
-window.location.assign("/");
-
-};
